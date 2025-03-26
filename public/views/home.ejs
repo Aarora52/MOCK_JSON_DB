@@ -5,6 +5,7 @@
 </head>
 
 <body>
+    <div id = "container">
       <center>
 <img id="image" src="/public/images/rdplogo.png" />
 <h4>Mock JSON Database Operations</h4>
@@ -37,7 +38,25 @@
     <h4> Delete User Form</h4>
      <input type="type" id="delete_id" placeholder="User ID:" />
      <button type="submit" onclick="deleteUser()"> Delete User </button>
-        </form>
+      
+    </form>
+    </div>
 </body>
+
+<script>
+ function UpdateUser(){
+    // Grab the edit form
+    const editUserForm = document.getElementById('editUserForm');
+
+    //Grab the id into the action attribute
+    editUserForm.action = "/users/" + id + "/update";
+
+    //Submit the Form
+    editUserForm.submit();
+
+ }
+
+
+</script>
 
 </html>

@@ -18,7 +18,7 @@
     <input type="text" id="Username" placeholder="Username" required />
     <input type="text" id="first_name" placeholder="First Name" required />
     <input type="text" id="email" placeholder="Email:" required />
-    <button type="submit">Add User</button>
+    <button type="submit"onclick= "updateUser()">Edit User</button>
 </form>
 
 
@@ -48,13 +48,31 @@
     // Grab the edit form
     const editUserForm = document.getElementById('editUserForm');
 
-    //Grab the id into the action attribute
+    //Grab the id into the input
     editUserForm.action = "/users/" + id + "/update";
+
+    // Insert the id into the action attribute
+    editUserForm.action = "/users/" + id + "/update/";
 
     //Submit the Form
     editUserForm.submit();
 
  }
+function deleteUser(){
+
+ // Grab the delete form
+ const deleteUserForm = document.getElementById('deleteUserForm');
+
+//Grab the id from the input
+const id = document.getElementById('delete_id').value;
+
+// Insert the id into the action attribute
+deleteUserForm.action= "/users/" + id +"/delete" ;
+
+//Submit the form
+deleteUserForm.submit();
+
+}
 
 
 </script>
